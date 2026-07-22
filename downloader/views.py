@@ -175,7 +175,6 @@ def google_verification(request):
         content_type="text/plain"
     )
 
-
 from django.http import HttpResponse
 
 def robots_txt(request):
