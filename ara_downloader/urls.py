@@ -2,9 +2,25 @@ from django.urls import path
 from django.views.generic import RedirectView
 from downloader import views
 from  downloader.views import google_verification
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap
+from downloader.views import robots_txt
+
+sitemaps = {
+    "static": StaticViewSitemap,
+}
+
+
+
 
 urlpatterns = [
-    # باقي المسارات...
+path("robots.txt", robots_txt),
+path(
+    "sitemap.xml",
+    sitemap,
+    {"sitemaps": sitemaps},
+    name="django.contrib.sitemaps.views.sitemap",
+),
 
     path(
         "google55e2cfdb79c0b019.html",

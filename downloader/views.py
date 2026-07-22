@@ -174,3 +174,17 @@ def google_verification(request):
         "google-site-verification: google55e2cfdb79c0b019.html",
         content_type="text/plain"
     )
+
+
+
+from django.http import HttpResponse
+
+def robots_txt(request):
+    return HttpResponse(
+        """User-agent: *
+Allow: /
+
+Sitemap: https://arafacebook.up.railway.app/sitemap.xml
+""",
+        content_type="text/plain",
+    )
