@@ -6,9 +6,8 @@ class StaticViewSitemap(Sitemap):
     changefreq = "daily"
 
     def items(self):
-        # هنا بتحط أسماء الـ urls اللي عايزها تظهر في السايت ماب
-        return ["index"]
+        # أسماء الـ urls اللي عايزها تظهر في السايت ماب
+        return ["index", "fetch_info"]
 
     def location(self, item):
-        # بيرجع المسار بتاع الـ url
         return reverse(item)
