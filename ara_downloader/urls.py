@@ -1,6 +1,6 @@
 from django.urls import path
 from django.views.generic import RedirectView
-from django.contrib.sitemaps import views as sitemap_views
+from django.contrib.sitemaps.views import sitemap
 from django.http import HttpResponse
 
 from downloader import views
@@ -11,12 +11,11 @@ sitemaps = {
     "static": StaticViewSitemap,
 }
 
-# View مخصص للـ sitemap.xml
+# View مخصص للسايت ماب عشان نعدل الهيدر
 def sitemap_xml(request):
-    response = sitemap_views.sitemap(request, {"sitemaps": sitemaps})
+    response = sitemap(request, {"sitemaps": sitemaps})
     response["Content-Type"] = "application/xml"
-    # هنا بنغير الهيدر عشان يسمح بالفهرسة
-    response["X-Robots-Tag"] = "all"
+    response["X-Robots-Tag"] = "all"   # السماح بالفهرسة
     return response
 
 urlpatterns = [
