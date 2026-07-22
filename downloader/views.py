@@ -165,3 +165,12 @@ def index(request):
     resp["Referrer-Policy"] = "strict-origin-when-cross-origin"
     resp["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
     return resp
+
+
+from django.http import HttpResponse
+
+def google_verification(request):
+    return HttpResponse(
+        "google-site-verification: google55e2cfdb79c0b019.html",
+        content_type="text/plain"
+    )
