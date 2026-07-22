@@ -176,7 +176,6 @@ def google_verification(request):
     )
 
 
-
 from django.http import HttpResponse
 
 def robots_txt(request):
@@ -184,7 +183,7 @@ def robots_txt(request):
         """User-agent: *
 Allow: /
 
-Sitemap: https://arafacebook.up.railway.app/sitemap.xml
+Sitemap: https://aratiktok.up.railway.app/sitemap.xml
 """,
         content_type="text/plain",
     )

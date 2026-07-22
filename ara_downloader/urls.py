@@ -14,13 +14,15 @@ sitemaps = {
 
 
 urlpatterns = [
-path("robots.txt", robots_txt),
-path(
-    "sitemap.xml",
-    sitemap,
-    {"sitemaps": sitemaps},
-    name="django.contrib.sitemaps.views.sitemap",
-),
+ 
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
+
+    path("robots.txt", views.robots_txt),
 
     path(
         "google55e2cfdb79c0b019.html",
