@@ -6,8 +6,7 @@ class StaticViewSitemap(Sitemap):
     changefreq = "daily"
 
     def items(self):
-        return ["index", "fetch_info"]
+        return ["index"]
 
     def location(self, item):
-        # نخلي الروابط https بدل http
-        return "https://aratiktok.up.railway.app" + reverse(item)
+        return reverse(item)

@@ -24,7 +24,7 @@ import os
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-secret-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -133,5 +133,4 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 import os
 STATICFILES_DIRS = [BASE_DIR / 'static'] if os.path.isdir(BASE_DIR / 'static') else []
 
-SITE_ID = 1
-SITE_URL = "https://aratiktok.up.railway.app"
+

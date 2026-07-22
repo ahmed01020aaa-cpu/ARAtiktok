@@ -15,11 +15,18 @@ urlpatterns = [
     path("api/fetch", views.fetch_info, name="fetch_info"),
     path("favicon.ico", RedirectView.as_view(url="/static/favicon.svg", permanent=False)),
 
-    # السايت ماب
-    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
 
-    # الروبوتس
     path("robots.txt", views.robots_txt),
 
-    path("google55e2cfdb79c0b019.html", google_verification, name="google_verification"),
+    path(
+        "google55e2cfdb79c0b019.html",
+        google_verification,
+        name="google_verification",
+    ),
 ]
