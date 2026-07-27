@@ -29,4 +29,11 @@ urlpatterns = [
         google_verification,
         name="google_verification",
     ),
+
+
+    path(
+    "sw.js",
+    RedirectView.as_view(url="/static/sw.js", permanent=False),
+    name="service_worker",
+),
 ]
